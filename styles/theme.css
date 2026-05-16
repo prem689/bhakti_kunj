@@ -1,0 +1,158 @@
+/* Light Theme (Default) */
+:root {
+  color-scheme: light;
+
+  /* Primary Colors */
+  --color-gold: #d4af37;
+  --color-dark-gold: #b8860b;
+  --color-light-gold: #ffd700;
+
+  /* Background */
+  --bg-primary: #07110B;
+  --bg-secondary: #0D1117;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-tertiary: rgba(255, 255, 255, 0.35);
+
+  /* Borders & Accents */
+  --border-color: #e0e0e0;
+  --accent-green: #4caf50;
+  --accent-teal: #17a2b8;
+
+  /* Typography */
+  --font-family-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --font-family-body: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  --spacing-xxxl: 6rem;
+}
+
+/* Dark Theme */
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Primary Colors */
+  --color-gold: #d4af37;
+  --color-dark-gold: #b8860b;
+  --color-light-gold: #ffd700;
+
+  /* Background */
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f26;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #999999;
+
+  /* Borders & Accents */
+  --border-color: #2a2e37;
+  --accent-green: #4caf50;
+  --accent-teal: #17a2b8;
+}
+
+/* Global Styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    font-family: var(--font-family-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Typography — layered so Tailwind text-* utilities win */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading);
+    color: var(--text-primary);
+    font-weight: 400;
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-light-gold);
+  }
+}
+
+@layer components {
+  .btn {
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background-color: var(--color-gold);
+    color: #000;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-light-gold);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    background-color: transparent;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-gold);
+    color: #000;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-light-gold);
+}
