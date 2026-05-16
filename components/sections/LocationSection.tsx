@@ -274,7 +274,7 @@ export function LocationSection() {
               <circle cx={CX} cy={CY} r="5" fill="white" />
               <text x={CX} y={CY + 37} textAnchor="middle"
                 fill="#C8A96B" fontSize="9" letterSpacing="2.5" fontWeight="600"
-                fontFamily="'Plus Jakarta Sans', Inter, sans-serif">VERIDIAN GROVE</text>
+                fontFamily="'Plus Jakarta Sans', Inter, sans-serif">BHAKTI KUNJ</text>
               <text x={CX} y={CY + 49} textAnchor="middle"
                 fill="rgba(255,255,255,0.28)" fontSize="7" letterSpacing="1"
                 fontFamily="'Plus Jakarta Sans', Inter, sans-serif">TOWNSHIP</text>

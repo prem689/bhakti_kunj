@@ -21,7 +21,7 @@ export function Footer() {
                 <polygon points="17,9 26,29 8,29" stroke="#C8A96B" strokeWidth="0.8" fill="rgba(200,169,107,0.08)" />
               </svg>
               <div>
-                <p className="text-white font-serif text-xs tracking-widest">VERIDIAN GROVE</p>
+                <p className="text-white font-serif text-xs tracking-widest">BHAKTI KUNJ</p>
                 <p className="text-[9px] tracking-widest" style={{ color: 'rgba(200,169,107,0.65)' }}>LIVE BEYOND EVERYDAY</p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export function Footer() {
             <ul className="space-y-4">
               {[
                 { Icon: Phone, text: '+91 12345 67890' },
-                { Icon: Mail, text: 'info@veridiangrove.com' },
+                { Icon: Mail, text: 'info@bhaktikunj.com' },
                 { Icon: Clock, text: 'Mon – Sun, 9:00 AM – 9:00 PM' },
               ].map(({ Icon, text }) => (
                 <li key={text} className="flex gap-3">
@@ -136,7 +136,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(200,169,107,0.1)' }}>
           <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            © 2024 Veridian Grove. All Rights Reserved.
+            © 2024 Bhakti Kunj. All Rights Reserved.
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms & Conditions', 'Legal & Approvals'].map(label => (

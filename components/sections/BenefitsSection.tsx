@@ -32,7 +32,7 @@ export function BenefitsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-[11px] font-medium uppercase mb-4" style={{ color: '#C8A96B', letterSpacing: '4px' }}>
-            WHY INVEST IN VERIDIAN GROVE?
+            WHY INVEST IN BHAKTI KUNJ?
           </p>
           <h2 className="text-4xl lg:text-5xl font-serif font-light text-white">
             Investment{' '}
@@ -57,7 +57,7 @@ export function BenefitsSection() {
 
         <div className="mt-14 text-center">
           <p className="text-sm font-light max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.38)' }}>
-            Join thousands of happy families who have chosen Veridian Grove as their dream home.
+            Join thousands of happy families who have chosen Bhakti Kunj as their dream home.
           </p>
         </div>
       </div>

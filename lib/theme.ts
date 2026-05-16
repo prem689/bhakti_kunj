@@ -1,4 +1,4 @@
-// Theme configuration for Veridian Grove landing page
+// Theme configuration for Bhakti Kunj landing page
 export const theme = {
   colors: {
     // Primary colors

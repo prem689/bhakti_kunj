@@ -16,7 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Veridian Grove - A Township Beyond Living',
+  title: 'Bhakti Kunj - A Township Beyond Living',
   description: 'A thoughtfully planned community that brings together nature, modern infrastructure and world-class amenities for a wholesome lifestyle.',
   generator: 'v0.app',
   icons: {

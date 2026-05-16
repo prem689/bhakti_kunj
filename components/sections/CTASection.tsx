@@ -38,7 +38,7 @@ export function CTASection() {
             Be part of the most sought-after township community. Book your site visit today!
           </p>
           <a
-            href="https://wa.me/911234567890?text=Hi%21%20I%27m%20interested%20in%20Veridian%20Grove%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+            href="https://wa.me/911234567890?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
             target="_blank"
             rel="noopener noreferrer"
             className="gold-btn px-10 py-4 rounded-full text-sm font-semibold uppercase text-black inline-flex items-center gap-3"

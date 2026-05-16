@@ -10,7 +10,7 @@ export function HeroSection() {
       {/* Background Image */}
       <Image
         src="/hero_section_bg.png"
-        alt="Veridian Grove Township"
+        alt="Bhakti Kunj Township"
         fill
         className="object-cover object-center"
         priority

@@ -58,7 +58,7 @@ export function VisionSection() {
             A Vision That Takes Shape
           </h2>
           <p className="font-light text-lg leading-relaxed mb-12" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Spread across vast acres of greenery, Veridian Grove is a well-positioned township
+            Spread across vast acres of greenery, Bhakti Kunj is a well-positioned township
             with wide roads, spacious grounds, and state-of-the-art infrastructure.
           </p>
 
