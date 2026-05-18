@@ -10,7 +10,7 @@ const stats = [
 
 export function VisionSection() {
   return (
-    <section id="vision" className="relative min-h-150 lg:min-h-175 overflow-hidden">
+    <section id="vision" className="force-dark relative min-h-150 lg:min-h-175 overflow-hidden">
 
       {/* Background Image */}
       <Image
@@ -32,7 +32,7 @@ export function VisionSection() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #07110B, transparent)' }}
+        style={{ background: 'linear-gradient(to top, var(--bg-primary), transparent)' }}
       />
 
       {/* Compass — top right */}
@@ -57,7 +57,7 @@ export function VisionSection() {
           <h2 className="text-4xl lg:text-6xl font-serif font-light text-white mb-6 leading-tight">
             A Vision That Takes Shape
           </h2>
-          <p className="font-light text-lg leading-relaxed mb-12" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          <p className="font-light text-lg leading-relaxed mb-12" style={{ color: 'var(--text-secondary)' }}>
             Spread across vast acres of greenery, Bhakti Kunj is a well-positioned township
             with wide roads, spacious grounds, and state-of-the-art infrastructure.
           </p>
@@ -69,7 +69,7 @@ export function VisionSection() {
                 <div className="text-4xl font-serif mb-1.5" style={{ color: '#C8A96B' }}>
                   {stat.value}
                 </div>
-                <div className="text-[10px] font-light tracking-widest" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <div className="text-[10px] font-light tracking-widest" style={{ color: 'var(--text-muted)' }}>
                   {stat.label}
                 </div>
               </div>

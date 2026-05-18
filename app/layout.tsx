@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
+import { Providers } from './providers'
 import './globals.css'
 import '../styles/theme.css'
 
@@ -39,8 +40,8 @@ export default function RootLayout({
       lang="en"
       className={`${playfairDisplay.variable} ${plusJakartaSans.variable}`}
     >
-      <body className="font-sans antialiased text-white bg-[#07110B]">
-        {children}
+      <body className="font-sans antialiased" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

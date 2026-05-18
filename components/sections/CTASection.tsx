@@ -2,7 +2,7 @@ export function CTASection() {
   return (
     <section
       className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #07110B 0%, #0D1117 50%, #07110B 100%)' }}
+      style={{ background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%)' }}
     >
       {/* Cinematic vignette */}
       <div className="absolute inset-0 pointer-events-none"
@@ -34,7 +34,7 @@ export function CTASection() {
           <h2 className="text-4xl lg:text-6xl font-serif font-light text-white mb-6 leading-tight">
             Your Dream Life Awaits
           </h2>
-          <p className="text-lg font-light mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="text-lg font-light mb-10 max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Be part of the most sought-after township community. Book your site visit today!
           </p>
           <a
@@ -53,15 +53,15 @@ export function CTASection() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-4xl font-serif mb-2" style={{ color: '#C8A96B' }}>160 ACRES</p>
-            <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.4)' }}>Of Spacious Living</p>
+            <p className="text-sm font-light" style={{ color: 'var(--text-muted)' }}>Of Spacious Living</p>
           </div>
           <div>
             <p className="text-4xl font-serif mb-2" style={{ color: '#C8A96B' }}>3000+</p>
-            <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.4)' }}>Happy Families</p>
+            <p className="text-sm font-light" style={{ color: 'var(--text-muted)' }}>Happy Families</p>
           </div>
           <div>
             <p className="text-4xl font-serif mb-2" style={{ color: '#C8A96B' }}>70%</p>
-            <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.4)' }}>Green Spaces</p>
+            <p className="text-sm font-light" style={{ color: 'var(--text-muted)' }}>Green Spaces</p>
           </div>
         </div>
       </div>

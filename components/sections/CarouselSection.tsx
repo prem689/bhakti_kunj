@@ -61,7 +61,7 @@ export function CarouselSection() {
   const nextSlide = () => { setAutoPlay(false); setCurrentSlide(prev => (prev + 1) % slides.length); };
 
   return (
-    <section id="gallery" className="py-24 lg:py-32" style={{ background: '#0D1117' }}>
+    <section id="gallery" className="py-24 lg:py-32" style={{ background: 'var(--bg-secondary)' }}>
       <div className="px-6 lg:px-16 max-w-360 mx-auto">
 
         {/* Section Header */}
@@ -149,7 +149,7 @@ export function CarouselSection() {
                 key={index}
                 onClick={() => { setCurrentSlide(index); setAutoPlay(false); }}
                 className={`rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 h-2.5' : 'w-2.5 h-2.5'}`}
-                style={{ background: index === currentSlide ? '#C8A96B' : 'rgba(255,255,255,0.25)' }}
+                style={{ background: index === currentSlide ? '#C8A96B' : 'var(--text-faint)' }}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

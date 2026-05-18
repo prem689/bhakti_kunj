@@ -19,7 +19,7 @@ export function BenefitsSection() {
     <section
       id="benefits"
       className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #07110B 0%, #0D1117 100%)' }}
+      style={{ background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%)' }}
     >
       {/* Ambient glow */}
       <div
@@ -48,7 +48,7 @@ export function BenefitsSection() {
                 {benefit.icon}
               </div>
               <h3 className="text-sm font-semibold text-white mb-3 leading-snug">{benefit.title}</h3>
-              <p className="text-xs font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="text-xs font-light leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {benefit.description}
               </p>
             </div>
@@ -56,7 +56,7 @@ export function BenefitsSection() {
         </div>
 
         <div className="mt-14 text-center">
-          <p className="text-sm font-light max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.38)' }}>
+          <p className="text-sm font-light max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
             Join thousands of happy families who have chosen Bhakti Kunj as their dream home.
           </p>
         </div>

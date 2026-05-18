@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
+    <section id="home" className="force-dark relative w-full h-screen overflow-hidden">
 
       {/* Background Image */}
       <Image
@@ -42,7 +42,7 @@ export function HeroSection() {
             </h1>
             <p
               className="text-base lg:text-lg font-light leading-relaxed mb-12 max-w-xl"
-              style={{ color: 'rgba(255,255,255,0.72)' }}
+              style={{ color: 'var(--text-secondary)' }}
             >
               A thoughtfully planned community that brings together nature, modern
               infrastructure and world-class amenities for a wholesome lifestyle.
@@ -60,23 +60,25 @@ export function HeroSection() {
               </button>
               {/* Secondary — glass pill */}
               <button
-                className="px-8 py-3.5 rounded-full text-sm font-semibold uppercase inline-flex items-center justify-center gap-2 w-fit transition-all duration-300"
+                className="glass-pill px-8 py-3.5 rounded-full text-sm font-semibold uppercase inline-flex items-center justify-center gap-2 w-fit transition-all duration-300"
                 style={{
                   color: 'rgba(255,255,255,0.9)',
                   border: '1px solid rgba(255,255,255,0.22)',
-                  background: 'rgba(255,255,255,0.04)',
+                  background: 'var(--card-bg-hover)',
                   backdropFilter: 'blur(8px)',
                   letterSpacing: '1px',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLButtonElement;
                   el.style.borderColor = 'rgba(200,169,107,0.5)';
-                  el.style.background = 'rgba(200,169,107,0.06)';
+                  el.style.background = 'rgba(200,169,107,0.12)';
+                  el.style.color = '#C8A96B';
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLButtonElement;
                   el.style.borderColor = 'rgba(255,255,255,0.22)';
-                  el.style.background = 'rgba(255,255,255,0.04)';
+                  el.style.background = 'var(--card-bg-hover)';
+                  el.style.color = '';
                 }}
               >
                 Download Brochure
@@ -88,7 +90,7 @@ export function HeroSection() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-[10px] font-light uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <span className="text-[10px] font-light uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
             Scroll to explore
           </span>
           <ChevronDown className="w-4 h-4" style={{ color: '#C8A96B' }} />
@@ -106,7 +108,7 @@ export function HeroSection() {
           ].map((stat, i) => (
             <div key={i} className="text-right">
               <p className="text-5xl font-serif font-light" style={{ color: '#C8A96B' }}>{stat.value}</p>
-              <p className="text-[10px] font-light tracking-wide mt-1.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <p className="text-[10px] font-light tracking-wide mt-1.5" style={{ color: 'var(--text-muted)' }}>
                 {stat.label}
               </p>
             </div>

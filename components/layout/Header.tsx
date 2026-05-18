@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -16,6 +17,10 @@ const navItems = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -34,10 +39,10 @@ export function Header() {
         className="fixed top-0 left-0 right-0 z-50"
         style={{
           height: scrolled ? '72px' : '100px',
-          background: scrolled ? 'rgba(5, 10, 8, 0.72)' : 'transparent',
+          background: scrolled ? 'var(--header-bg)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
+          borderBottom: scrolled ? '1px solid var(--border-subtle)' : 'none',
           boxShadow: scrolled ? '0 4px 40px rgba(0,0,0,0.35)' : 'none',
           transition: 'height 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease',
         }}
@@ -72,11 +77,11 @@ export function Header() {
                 className="relative text-[10px] font-medium uppercase group"
                 style={{
                   letterSpacing: '1.5px',
-                  color: 'rgba(255,255,255,0.82)',
+                  color: 'var(--text-nav)',
                   transition: 'color 0.3s ease',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.82)'; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-primary)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-nav)'; }}
               >
                 {item.label}
                 <span
@@ -103,16 +108,32 @@ export function Header() {
               BOOK A VISIT
             </a>
 
+            {/* Theme toggle */}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style={{
+                  background: 'var(--card-bg-hover)',
+                  border: '1px solid var(--border-subtle)',
+                  color: '#C8A96B',
+                }}
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+              </button>
+            )}
+
             {/* Hamburger — circular glass */}
             <button
               className="lg:hidden w-12 h-12 rounded-full flex items-center justify-center"
               style={{
-                background: 'rgba(255,255,255,0.06)',
+                background: 'var(--card-bg-hover)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 transition: 'border-color 0.3s ease',
               }}
               onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.22)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border-faint)'; }}
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
             >
@@ -127,7 +148,7 @@ export function Header() {
         <div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center"
           style={{
-            background: 'rgba(5, 10, 8, 0.97)',
+            background: 'var(--overlay-bg)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
           }}
@@ -136,7 +157,7 @@ export function Header() {
           <button
             className="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center"
             style={{
-              background: 'rgba(255,255,255,0.06)',
+              background: 'var(--card-bg-hover)',
               border: '1px solid rgba(255,255,255,0.1)',
             }}
             onClick={() => setIsOpen(false)}
@@ -151,9 +172,9 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className="text-4xl font-serif font-light transition-colors duration-300"
-                style={{ color: 'rgba(255,255,255,0.72)' }}
+                style={{ color: 'var(--text-secondary)' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.72)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-secondary)'; }}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

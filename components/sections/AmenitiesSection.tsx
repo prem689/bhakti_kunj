@@ -37,7 +37,7 @@ export function AmenitiesSection() {
     <section
       id="amenities"
       className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #0D1117 0%, #07110B 100%)' }}
+      style={{ background: 'linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%)' }}
     >
       {/* Subtle noise texture overlay */}
       <div
@@ -75,7 +75,7 @@ export function AmenitiesSection() {
                 {amenity.icon}
               </div>
               <h3 className="text-base font-semibold text-white mb-2">{amenity.title}</h3>
-              <p className="text-sm font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {amenity.description}
               </p>
             </div>

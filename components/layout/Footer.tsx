@@ -7,7 +7,7 @@ const lifestyleLinks = ['Sports & Fitness', 'Parks & Gardens', 'Community Living
 
 export function Footer() {
   return (
-    <footer style={{ background: '#07110B', borderTop: '1px solid rgba(200,169,107,0.12)' }}>
+    <footer style={{ background: 'var(--bg-primary)', borderTop: '1px solid rgba(200,169,107,0.12)' }}>
       <div className="max-w-360 mx-auto px-6 lg:px-16 py-16 lg:py-20">
 
         {/* Main grid */}
@@ -25,7 +25,7 @@ export function Footer() {
                 <p className="text-[9px] tracking-widest" style={{ color: 'rgba(200,169,107,0.65)' }}>LIVE BEYOND EVERYDAY</p>
               </div>
             </div>
-            <p className="text-sm font-light mb-6" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <p className="text-sm font-light mb-6" style={{ color: 'var(--text-muted)' }}>
               A thoughtfully planned township for modern luxury living.
             </p>
             {/* Social Icons */}
@@ -72,9 +72,9 @@ export function Footer() {
               {quickLinks.map(link => (
                 <li key={link}>
                   <a href="#" className="text-sm font-light transition-colors duration-300"
-                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    style={{ color: 'var(--text-muted)' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.45)'; }}>
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-muted)'; }}>
                     {link}
                   </a>
                 </li>
@@ -89,9 +89,9 @@ export function Footer() {
               {lifestyleLinks.map(link => (
                 <li key={link}>
                   <a href="#" className="text-sm font-light transition-colors duration-300"
-                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    style={{ color: 'var(--text-muted)' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.45)'; }}>
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-muted)'; }}>
                     {link}
                   </a>
                 </li>
@@ -110,7 +110,7 @@ export function Footer() {
               ].map(({ Icon, text }) => (
                 <li key={text} className="flex gap-3">
                   <Icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#C8A96B' }} />
-                  <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.45)' }}>{text}</p>
+                  <p className="text-sm font-light" style={{ color: 'var(--text-muted)' }}>{text}</p>
                 </li>
               ))}
             </ul>
@@ -126,7 +126,7 @@ export function Footer() {
           ].map(({ title, lines }) => (
             <div key={title}>
               <h4 className="text-white font-semibold text-xs tracking-widest mb-2">{title}</h4>
-              <p className="text-sm font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
+              <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                 {lines[0]}<br />{lines[1]}
               </p>
             </div>
@@ -135,15 +135,15 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(200,169,107,0.1)' }}>
-          <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.3)' }}>
+          <p className="text-sm font-light" style={{ color: 'var(--text-faint)' }}>
             © 2024 Bhakti Kunj. All Rights Reserved.
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms & Conditions', 'Legal & Approvals'].map(label => (
               <a key={label} href="#" className="text-sm font-light transition-colors duration-300"
-                style={{ color: 'rgba(255,255,255,0.3)' }}
+                style={{ color: 'var(--text-faint)' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.3)'; }}>
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-faint)'; }}>
                 {label}
               </a>
             ))}

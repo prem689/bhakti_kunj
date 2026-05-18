@@ -129,8 +129,8 @@
 
 @layer components {
   .luxury-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
@@ -138,7 +138,7 @@
   .luxury-card:hover {
     transform: translateY(-8px);
     border-color: rgba(200, 169, 107, 0.38);
-    background: rgba(200, 169, 107, 0.04);
+    background: rgba(200, 169, 107, 0.06);
     box-shadow: 0 12px 40px rgba(200, 169, 107, 0.1);
   }
   .luxury-card:hover .card-icon {
@@ -152,6 +152,24 @@
     box-shadow: 0 0 28px rgba(200, 169, 107, 0.5);
     transform: scale(1.04);
   }
+}
+
+@layer utilities {
+  /* Light mode — override Tailwind hard-coded white text to use theme var */
+  html.light .text-white { color: var(--text-primary) !important; }
+  html.light .bg-\[--bg-primary\] { background-color: var(--bg-primary) !important; }
+
+  /* Sections with dark photo overlays always stay white — override the override */
+  html.light .force-dark {
+    --text-primary:   #ffffff;
+    --text-secondary: rgba(255,255,255,0.62);
+    --text-muted:     rgba(255,255,255,0.42);
+    --text-faint:     rgba(255,255,255,0.28);
+  }
+  html.light .force-dark .text-white { color: white !important; }
+
+  /* Glass button inside force-dark: bg turns white in light mode so text must be dark */
+  html.light .glass-pill { color: #07110B !important; }
 }
 
 @layer utilities {

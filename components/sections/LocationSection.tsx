@@ -84,7 +84,7 @@ export function LocationSection() {
     <section
       id="location"
       className="relative overflow-hidden"
-      style={{ minHeight: '750px', background: 'linear-gradient(180deg, #07110B 0%, #0B1317 100%)' }}
+      style={{ minHeight: '750px', background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)' }}
     >
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none"
@@ -109,7 +109,7 @@ export function LocationSection() {
           </h2>
 
           <p className="text-lg font-light leading-relaxed mb-10"
-            style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '420px' }}>
+            style={{ color: 'var(--text-secondary)', maxWidth: '420px' }}>
             Strategically positioned with seamless access to highways, airports,
             business districts, healthcare, and educational institutions.
           </p>
@@ -123,7 +123,7 @@ export function LocationSection() {
                   key={item.id}
                   className="flex items-center gap-4 px-4 py-3 rounded-xl"
                   style={{
-                    borderLeft: `2px solid ${isHov ? '#C8A96B' : 'rgba(255,255,255,0.05)'}`,
+                    borderLeft: `2px solid ${isHov ? '#C8A96B' : 'var(--border-faint)'}`,
                     background: isHov ? 'rgba(200,169,107,0.07)' : 'transparent',
                     transform: isHov ? 'translateX(5px)' : 'translateX(0)',
                     transition: 'all 0.3s ease',
@@ -135,19 +135,19 @@ export function LocationSection() {
                   <div
                     className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
                     style={{
-                      background: isHov ? 'rgba(200,169,107,0.18)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${isHov ? 'rgba(200,169,107,0.5)' : 'rgba(255,255,255,0.07)'}`,
+                      background: isHov ? 'rgba(200,169,107,0.18)' : 'var(--card-bg-hover)',
+                      border: `1px solid ${isHov ? 'rgba(200,169,107,0.5)' : 'var(--border-subtle)'}`,
                       boxShadow: isHov ? '0 0 14px rgba(200,169,107,0.4)' : 'none',
                       transition: 'all 0.3s ease',
                     }}
                   >
                     <Icon size={13} style={{
-                      color: isHov ? '#C8A96B' : 'rgba(255,255,255,0.45)',
+                      color: isHov ? '#C8A96B' : 'var(--text-muted)',
                       transition: 'color 0.3s ease',
                     }} />
                   </div>
                   <span className="flex-1 text-sm font-light" style={{
-                    color: isHov ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.65)',
+                    color: isHov ? 'var(--text-primary)' : 'var(--text-secondary)',
                     transition: 'color 0.3s ease',
                   }}>
                     {item.label}
