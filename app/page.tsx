@@ -4,6 +4,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { AmenitiesSection } from '@/components/sections/AmenitiesSection';
 import { VisionSection } from '@/components/sections/VisionSection';
 import { CarouselSection } from '@/components/sections/CarouselSection';
+import { GallerySection } from '@/components/sections/GallerySection';
 import { LocationSection } from '@/components/sections/LocationSection';
 import { BenefitsSection } from '@/components/sections/BenefitsSection';
 import { CTASection } from '@/components/sections/CTASection';
@@ -17,6 +18,7 @@ export default function Home() {
       <AmenitiesSection />
       <VisionSection />
       <CarouselSection />
+      <GallerySection />
       <LocationSection />
       <BenefitsSection />
       <CTASection />

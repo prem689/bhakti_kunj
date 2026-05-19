@@ -84,7 +84,7 @@ export function LocationSection() {
     <section
       id="location"
       className="relative overflow-hidden"
-      style={{ minHeight: '750px', background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)' }}
+      style={{ background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)' }}
     >
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none"
@@ -94,10 +94,9 @@ export function LocationSection() {
 
       <div
         className="relative z-10 flex flex-col lg:flex-row items-stretch max-w-360 mx-auto px-6 lg:px-16 gap-0"
-        style={{ minHeight: '750px', paddingTop: '6rem', paddingBottom: '6rem' }}
       >
         {/* LEFT 40% */}
-        <div className="w-full lg:w-2/5 flex flex-col justify-center pr-0 lg:pr-14">
+        <div className="w-full lg:w-2/5 flex flex-col justify-center pr-0 lg:pr-14" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
 
           <p className="text-[11px] font-medium uppercase mb-5"
             style={{ color: '#C8A96B', letterSpacing: '4px' }}>
@@ -170,7 +169,7 @@ export function LocationSection() {
         </div>
 
         {/* RIGHT 60% — MAP */}
-        <div className="w-full lg:w-3/5 relative mt-12 lg:mt-0" style={{ minHeight: '500px' }}>
+        <div className="w-full lg:w-3/5 relative self-center mt-12 lg:mt-0" style={{ height: '580px' }}>
           <div
             className="absolute inset-0 rounded-2xl overflow-hidden"
             style={{

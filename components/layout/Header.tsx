@@ -60,7 +60,7 @@ export function Header() {
               className="rounded-full transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(200,169,107,0.6)]"
             />
             <div>
-              <div className="font-serif text-sm tracking-[0.3em] leading-tight" style={{ color: 'var(--text-primary)' }}>
+              <div className="font-serif text-sm tracking-[0.3em] leading-tight" style={{ color: scrolled ? 'var(--text-primary)' : 'white' }}>
                 BHAKTI KUNJ
               </div>
               <div className="text-[9px] tracking-[0.22em] uppercase leading-tight mt-0.5"
@@ -79,11 +79,11 @@ export function Header() {
                 className="relative text-[10px] font-medium uppercase group"
                 style={{
                   letterSpacing: '1.5px',
-                  color: 'var(--text-nav)',
+                  color: scrolled ? 'var(--text-nav)' : 'rgba(255,255,255,0.82)',
                   transition: 'color 0.3s ease',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-primary)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-nav)'; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = scrolled ? 'var(--text-primary)' : 'white'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = scrolled ? 'var(--text-nav)' : 'rgba(255,255,255,0.82)'; }}
               >
                 {item.label}
                 <span
@@ -116,8 +116,8 @@ export function Header() {
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
                 style={{
-                  background: 'var(--card-bg-hover)',
-                  border: '1px solid var(--border-subtle)',
+                  background: scrolled ? 'var(--card-bg-hover)' : 'rgba(0,0,0,0.3)',
+                  border: scrolled ? '1px solid var(--border-subtle)' : '1px solid rgba(255,255,255,0.15)',
                   color: '#C8A96B',
                 }}
                 aria-label="Toggle theme"
@@ -130,12 +130,12 @@ export function Header() {
             <button
               className="lg:hidden w-12 h-12 rounded-full flex items-center justify-center"
               style={{
-                background: 'var(--card-bg-hover)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                transition: 'border-color 0.3s ease',
+                background: scrolled ? 'var(--card-bg-hover)' : 'rgba(0,0,0,0.3)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                transition: 'border-color 0.3s ease, background 0.3s ease',
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.22)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border-faint)'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.35)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.15)'; }}
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
             >
