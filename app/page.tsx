@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { VideoSection } from '@/components/sections/VideoSection';
 import { AmenitiesSection } from '@/components/sections/AmenitiesSection';
 import { VisionSection } from '@/components/sections/VisionSection';
 import { CarouselSection } from '@/components/sections/CarouselSection';
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="bg-black min-h-screen">
       <Header />
       <HeroSection />
+      <VideoSection />
       <AmenitiesSection />
       <VisionSection />
       <CarouselSection />
