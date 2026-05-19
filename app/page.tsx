@@ -7,6 +7,7 @@ import { CarouselSection } from '@/components/sections/CarouselSection';
 import { LocationSection } from '@/components/sections/LocationSection';
 import { BenefitsSection } from '@/components/sections/BenefitsSection';
 import { CTASection } from '@/components/sections/CTASection';
+import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <BenefitsSection />
       <CTASection />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }
