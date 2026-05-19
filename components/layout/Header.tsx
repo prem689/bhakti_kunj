@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -50,20 +51,21 @@ export function Header() {
         <div className="max-w-[1440px] mx-auto px-10 lg:px-14 h-full flex items-center justify-between">
 
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-              className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(200,169,107,0.7)]">
-              <polygon points="17,2 32,32 2,32" stroke="#C8A96B" strokeWidth="1.5" fill="none" />
-              <polygon points="17,9 26,29 8,29" stroke="#C8A96B" strokeWidth="0.8" fill="rgba(200,169,107,0.08)" />
-              <line x1="17" y1="2" x2="17" y2="32" stroke="#C8A96B" strokeWidth="0.5" strokeOpacity="0.4" />
-            </svg>
+          <a href="#home" className="flex items-center gap-3 shrink-0 group">
+            <Image
+              src="/logo/logo.png"
+              alt="Bhakti Kunj"
+              width={48}
+              height={48}
+              className="rounded-full transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(200,169,107,0.6)]"
+            />
             <div>
-              <div className="text-white font-serif text-sm tracking-[0.3em] leading-tight">
+              <div className="font-serif text-sm tracking-[0.3em] leading-tight" style={{ color: 'var(--text-primary)' }}>
                 BHAKTI KUNJ
               </div>
               <div className="text-[9px] tracking-[0.22em] uppercase leading-tight mt-0.5"
                 style={{ color: 'rgba(200,169,107,0.72)' }}>
-                LIVE BEYOND EVERYDAY
+                LIVING IN THE HEART OF BRAJ
               </div>
             </div>
           </a>
@@ -96,10 +98,10 @@ export function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-4 flex-shrink-0">
+          <div className="flex items-center gap-4 shrink-0">
             {/* CTA — pill gold gradient */}
             <a
-              href="https://wa.me/911234567890?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+              href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center text-[10px] font-semibold uppercase text-black rounded-full px-6 py-3 gold-btn"
@@ -183,7 +185,7 @@ export function Header() {
           </nav>
 
           <a
-            href="https://wa.me/911234567890?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+            href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-12 px-10 py-4 rounded-full text-xs font-semibold uppercase text-black gold-btn"
