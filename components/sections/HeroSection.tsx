@@ -73,7 +73,9 @@ export function HeroSection() {
                 <span>→</span>
               </button>
               {/* Secondary — glass pill */}
-              <button
+              <a
+                href="/brochure/Bhakti kunj trifold.pdf"
+                download="Bhakti Kunj Brochure.pdf"
                 className="glass-pill px-8 py-3.5 rounded-full text-sm font-semibold uppercase inline-flex items-center justify-center gap-2 w-fit transition-all duration-300"
                 style={{
                   color: 'rgba(255,255,255,0.9)',
@@ -83,13 +85,13 @@ export function HeroSection() {
                   letterSpacing: '1px',
                 }}
                 onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLButtonElement;
+                  const el = e.currentTarget as HTMLAnchorElement;
                   el.style.borderColor = 'rgba(200,169,107,0.5)';
                   el.style.background = 'rgba(200,169,107,0.12)';
                   el.style.color = '#C8A96B';
                 }}
                 onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLButtonElement;
+                  const el = e.currentTarget as HTMLAnchorElement;
                   el.style.borderColor = 'rgba(255,255,255,0.22)';
                   el.style.background = 'var(--card-bg-hover)';
                   el.style.color = '';
@@ -97,7 +99,7 @@ export function HeroSection() {
               >
                 Download Brochure
                 <span>↓</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
