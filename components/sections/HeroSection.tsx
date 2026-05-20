@@ -1,70 +1,133 @@
 'use client';
 
+import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const SLIDES = [
+  { src: '/hero/hero_section_bg.png', alt: 'Bhakti Kunj Township' },
+  { src: '/hero/Shri-Radhe-Krishna-Seva.webp', alt: 'Shri Radhe Krishna — Sacred Braj' },
+  { src: '/hero/Vishram_Ghat.jpg', alt: 'Vishram Ghat, Mathura' },
+  { src: '/hero/places-to-visit-in-mathura-bharat-sair.webp', alt: 'Places to Visit in Mathura' },
+  { src: '/hero/resort_one.avif', alt: 'Resort Style Living' },
+];
+
+const AUTO_PLAY_MS = 5000;
 
 export function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const goTo = useCallback((idx: number) => {
+    if (animating) return;
+    setAnimating(true);
+    setCurrent(idx);
+    setTimeout(() => setAnimating(false), 700);
+  }, [animating]);
+
+  const prev = useCallback(() => goTo((current - 1 + SLIDES.length) % SLIDES.length), [current, goTo]);
+  const next = useCallback(() => goTo((current + 1) % SLIDES.length), [current, goTo]);
+
+  useEffect(() => {
+    const timer = setInterval(next, AUTO_PLAY_MS);
+    return () => clearInterval(timer);
+  }, [next]);
+
   return (
     <section id="home" className="force-dark relative w-full h-screen overflow-hidden">
 
-      {/* Background Image */}
-      <Image
-        src="/hero_section_bg.png"
-        alt="Bhakti Kunj Township"
-        fill
-        className="object-cover object-center"
-        priority
-        quality={100}
-      />
+      {/* Slides */}
+      {SLIDES.map((slide, i) => (
+        <div
+          key={slide.src}
+          className="absolute inset-0 transition-opacity duration-700"
+          style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            className="object-cover object-center"
+            priority={i === 0}
+            quality={100}
+          />
+        </div>
+      ))}
 
-      {/* Gradient — dark left for text, dark right for stats, bright center */}
-      <div className="absolute inset-0" style={{
-        background: 'linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 48%, rgba(0,0,0,0.15) 52%, rgba(0,0,0,0.75) 100%)',
+      {/* ── Dark scrim — solid base layer so text is always readable ── */}
+      <div className="absolute inset-0 z-10" style={{ background: 'rgba(0,0,0,0.55)' }} />
+
+      {/* Gradient — dark left for text, dark right for stats */}
+      <div className="absolute inset-0 z-10" style={{
+        background: 'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.10) 48%, rgba(0,0,0,0.10) 52%, rgba(0,0,0,0.65) 100%)',
       }} />
 
       {/* Vignette — darkens top/bottom edges */}
-      <div className="absolute inset-0" style={{
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.45) 100%)',
+      <div className="absolute inset-0 z-10" style={{
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.40) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.50) 100%)',
       }} />
 
       {/* Vintage sepia wash */}
-      <div className="absolute inset-0" style={{ background: 'rgba(100,65,20,0.15)' }} />
+      <div className="absolute inset-0 z-10" style={{ background: 'rgba(100,65,20,0.10)' }} />
 
       {/* Film grain */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        opacity: 0.055,
+      <div className="absolute inset-0 z-10 pointer-events-none" style={{
+        opacity: 0.05,
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
         backgroundSize: '128px 128px',
       }} />
 
-      {/* Content Container */}
-      <div className="relative h-full w-full flex flex-col">
+      {/* ── Main Content ── */}
+      <div className="relative z-20 h-full w-full flex flex-col">
 
-        {/* Main Content */}
         <div className="flex-1 flex flex-col justify-center px-6 lg:px-16 pt-28 pb-20">
-          <div className="max-w-2xl">
+          <div className="max-w-6xl">
             <p
               className="text-xs lg:text-sm font-medium uppercase mb-8"
               style={{ color: '#C8A96B', letterSpacing: '4px' }}
             >
-              A WORLD WITHIN YOUR WORLD
+              Bhakti Kunj — Mathura&apos;s most rapidly developing luxury destination
             </p>
-            <h1 className="text-6xl lg:text-8xl font-serif font-light text-white mb-8 leading-tight">
-              A Township
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif font-light text-white mb-8 leading-tight">
+              Escape the Ordinary.
               <br />
-              <span style={{ color: '#C8A96B' }}>Beyond Living</span>
+              <span style={{ color: '#C8A96B' }}>Embrace the Extraordinary.</span>
             </h1>
-            <p
-              className="text-base lg:text-lg font-light leading-relaxed mb-12 max-w-xl"
+            <div
+              className="text-base lg:text-lg font-light leading-relaxed mb-12 max-w-xl space-y-2"
               style={{ color: 'var(--text-secondary)' }}
             >
-              A thoughtfully planned community that brings together nature, modern
-              infrastructure and world-class amenities for a wholesome lifestyle.
-            </p>
+              <p>• Wake Up to Greenery, Not Traffic.</p>
+              <p>• Luxury Plots &amp; Cottages Township</p>
+              <p>• Sacred Serenity of Braj</p>
+              <p>• Resort Style Living in Mathura</p>
+            </div>
+
+            {/* ── Investment Plan Highlight Strip — only on mobile & tablet (desktop has right-side stats) ── */}
+            <div className="flex flex-wrap gap-3 mb-8 lg:hidden">
+              {[
+                { value: '₹4,000/mo', label: 'Guaranteed Rental Income' },
+                { value: '3 Years',   label: 'Rental Guarantee Period' },
+                { value: 'Save 75%',  label: 'vs Resort Market' },
+                { value: '143',       label: 'Govt. Approved' },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col px-4 py-3 rounded-xl"
+                  style={{
+                    background: 'rgba(200,169,107,0.12)',
+                    border: '1px solid rgba(200,169,107,0.35)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  <span className="text-base font-bold" style={{ color: '#C8A96B' }}>{item.value}</span>
+                  <span className="text-[10px] uppercase tracking-wider text-white/60 mt-0.5">{item.label}</span>
+                </div>
+              ))}
+            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* Primary — gold gradient pill */}
               <button
                 className="gold-btn px-8 py-3.5 rounded-full text-sm font-semibold uppercase text-black inline-flex items-center justify-center gap-2 w-fit"
                 style={{ letterSpacing: '1px' }}
@@ -72,7 +135,6 @@ export function HeroSection() {
                 Explore Township
                 <span>→</span>
               </button>
-              {/* Secondary — glass pill */}
               <a
                 href="/brochure/Bhakti kunj trifold.pdf"
                 download="Bhakti Kunj Brochure.pdf"
@@ -101,6 +163,32 @@ export function HeroSection() {
                 <span>↓</span>
               </a>
             </div>
+
+            {/* Contact links */}
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <a
+                href="tel:9810164924"
+                className="flex items-center gap-2 text-sm font-medium hover:underline transition-opacity hover:opacity-80"
+                style={{ color: '#C8A96B' }}
+              >
+                <Phone className="w-4 h-4" />
+                9810164924
+              </a>
+              <a
+                href="https://instagram.com/BHAKTIKUNJ7"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm font-medium hover:underline transition-opacity hover:opacity-80"
+                style={{ color: '#C8A96B' }}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+                @BHAKTIKUNJ7
+              </a>
+            </div>
           </div>
         </div>
 
@@ -113,14 +201,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Right Side Stats */}
-      <div className="absolute right-0 top-0 h-full hidden lg:flex flex-col justify-center pr-16">
+      {/* ── Right Side Stats ── */}
+      <div className="absolute right-0 top-0 h-full z-20 hidden lg:flex flex-col justify-center pr-16">
         <div className="space-y-14">
           {[
-            { value: '160', label: 'ACRES TOTAL AREA' },
-            { value: '3000+', label: 'HAPPY FAMILIES' },
-            { value: '70%', label: 'GREEN SPACE' },
-            { value: '24/7', label: 'SECURITY & SURVEILLANCE' },
+            { value: '₹4,000', label: '/ MONTH RENTAL INCOME' },
+            { value: '1.5×', label: 'BUY BACK IN 3 YEARS' },
+            { value: 'Sold Out', label: 'PHASE 1' },
+            { value: '143', label: 'APPROVED' },
           ].map((stat, i) => (
             <div key={i} className="text-right">
               <p className="text-5xl font-serif font-light" style={{ color: '#C8A96B' }}>{stat.value}</p>
@@ -130,6 +218,52 @@ export function HeroSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ── Slider Controls ── */}
+      {/* Prev / Next arrows */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+        style={{
+          background: 'rgba(0,0,0,0.5)',
+          border: '1px solid rgba(200,169,107,0.35)',
+          backdropFilter: 'blur(6px)',
+          color: '#C8A96B',
+        }}
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+        style={{
+          background: 'rgba(0,0,0,0.5)',
+          border: '1px solid rgba(200,169,107,0.35)',
+          backdropFilter: 'blur(6px)',
+          color: '#C8A96B',
+        }}
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className="transition-all duration-300 rounded-full"
+            style={{
+              width: i === current ? '24px' : '8px',
+              height: '8px',
+              background: i === current ? '#C8A96B' : 'rgba(200,169,107,0.35)',
+            }}
+          />
+        ))}
       </div>
 
     </section>
