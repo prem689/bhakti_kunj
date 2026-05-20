@@ -1,6 +1,9 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { IntroductionSection } from '@/components/sections/IntroductionSection';
+import { MasterPlanSection } from '@/components/sections/MasterPlanSection';
+import { PaymentPlanSection } from '@/components/sections/PaymentPlanSection';
 import { VideoSection } from '@/components/sections/VideoSection';
 import { AmenitiesSection } from '@/components/sections/AmenitiesSection';
 import { VisionSection } from '@/components/sections/VisionSection';
@@ -16,6 +19,9 @@ export default function Home() {
     <main className="bg-black min-h-screen">
       <Header />
       <HeroSection />
+      <IntroductionSection />
+      <MasterPlanSection />
+      <PaymentPlanSection />
       <VideoSection />
       <AmenitiesSection />
       <VisionSection />
