@@ -3,8 +3,20 @@
 import { Facebook, Instagram, Youtube, Linkedin, Phone, Clock, MapPin } from 'lucide-react';
 import Image from 'next/image';
 
-const quickLinks = ['About Township', 'Clubhouses', 'Amenities', 'Master Plan', 'Parks & Gardens', 'Community Living'];
-const lifestyleLinks = ['Sports & Fitness', 'Parks & Gardens', 'Community Living', 'Events', 'Dining & Recreation', 'Safety'];
+const quickLinks = [
+  { label: 'Home',          href: '#home'          },
+  { label: 'About Township', href: '#about'         },
+  { label: 'Amenities',     href: '#amenities'     },
+  { label: 'Master Plan',   href: '#master-plan'   },
+  { label: 'Payment Plans', href: '#payment-plans' },
+  { label: 'Gallery',       href: '#gallery'       },
+];
+const exploreLinks = [
+  { label: 'Lifestyle',     href: '#lifestyle'     },
+  { label: 'Location',      href: '#location'      },
+  { label: 'Introduction',  href: '#introduction'  },
+  { label: 'Contact Us',    href: '#contact'       },
+];
 
 export function Footer() {
   return (
@@ -73,30 +85,30 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">QUICK LINKS</h4>
             <ul className="space-y-3">
-              {quickLinks.map(link => (
-                <li key={link}>
-                  <a href="#" className="text-sm font-light transition-colors duration-300"
+              {quickLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm font-light transition-colors duration-300"
                     style={{ color: 'var(--text-muted)' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-muted)'; }}>
-                    {link}
+                    {label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Lifestyle */}
+          {/* Explore */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">LIFESTYLE</h4>
+            <h4 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">EXPLORE</h4>
             <ul className="space-y-3">
-              {lifestyleLinks.map(link => (
-                <li key={link}>
-                  <a href="#" className="text-sm font-light transition-colors duration-300"
+              {exploreLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm font-light transition-colors duration-300"
                     style={{ color: 'var(--text-muted)' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C8A96B'; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-muted)'; }}>
-                    {link}
+                    {label}
                   </a>
                 </li>
               ))}
@@ -110,7 +122,7 @@ export function Footer() {
               {[
                 { Icon: Phone, text: '+91 70550 50551' },
                 { Icon: Phone, text: '+91 79003 33101' },
-                { Icon: MapPin, text: '604 - Full Moon, Omaxe Internity, Vrindavan – 281121' },
+                { Icon: MapPin, text: '301, 2nd Floor, AGCR Enclave, Near Karkardooma Court, Delhi' },
                 { Icon: Clock, text: 'Mon – Sun, 9:00 AM – 9:00 PM' },
               ].map(({ Icon, text }) => (
                 <li key={text} className="flex gap-3">
@@ -125,8 +137,8 @@ export function Footer() {
         {/* Bottom Info */}
         <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-8 mb-8" style={{ borderTop: '1px solid rgba(200,169,107,0.1)' }}>
           {[
-            { title: 'REGISTERED OFFICE', lines: ['604 - Full Moon, Omaxe Internity', 'Vrindavan – 281121'] },
-            { title: 'SALES OFFICE', lines: ['604 - Full Moon, Omaxe Internity', 'Vrindavan – 281121'] },
+            { title: 'CORPORATE OFFICE', lines: ['301, 2nd Floor, AGCR Enclave, Main Road', 'Near Karkardooma Court, Delhi'] },
+            { title: 'SITE ADDRESS', lines: ['Mathura–Bharatpur Highway', 'Mathura, Uttar Pradesh'] },
           ].map(({ title, lines }) => (
             <div key={title}>
               <h4 className="text-white font-semibold text-xs tracking-widest mb-2">{title}</h4>

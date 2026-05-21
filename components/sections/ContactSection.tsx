@@ -100,8 +100,8 @@ export function ContactSection() {
                   <div>
                     <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Corporate Office</p>
                     <p className="text-white/80 text-sm leading-relaxed">
-                      604 - Full Moon, Omaxe Internity,<br />
-                      Vrindavan – 281121
+                      301, 2nd Floor, AGCR Enclave, Main Road,<br />
+                      Near Karkardooma Court, Delhi
                     </p>
                   </div>
                   <a
