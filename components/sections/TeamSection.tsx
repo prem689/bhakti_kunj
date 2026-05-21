@@ -1,6 +1,6 @@
 'use client';
 
-import { Crown, Briefcase } from 'lucide-react';
+import { Crown } from 'lucide-react';
 
 const SALES_TEAM = [
   {
@@ -90,17 +90,6 @@ export function TeamSection() {
             {/* Gold divider */}
             <div className="w-10 h-px mt-5" style={{ background: 'rgba(200,169,107,0.4)' }} />
           </div>
-        </div>
-
-        {/* Sales Head label */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="flex-1 h-px" style={{ background: 'rgba(200,169,107,0.15)' }} />
-          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-            style={{ border: '1px solid rgba(200,169,107,0.25)', background: 'rgba(200,169,107,0.06)' }}>
-            <Briefcase size={12} style={{ color: '#C8A96B' }} />
-            <span className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#C8A96B' }}>Sales Team</span>
-          </div>
-          <div className="flex-1 h-px" style={{ background: 'rgba(200,169,107,0.15)' }} />
         </div>
 
         {/* Sales team grid */}
