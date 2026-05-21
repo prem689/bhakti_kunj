@@ -7,43 +7,63 @@ interface CarouselItem {
   id: number;
   title: string;
   image: string;
+  description: string;
 }
 
 const slides: CarouselItem[] = [
   {
     id: 1,
-    title: 'Grand Clubhouse',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
+    title: 'Gaushala',
+    image: 'https://images.unsplash.com/photo-1596733430284-f7437764b1a9?w=1200&h=450&fit=crop',
+    description: 'Dedicated cow sanctuary honouring the spirit of Braj.',
   },
   {
     id: 2,
-    title: 'Infinity Swimming Pool',
-    image: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&h=600&fit=crop',
+    title: '40m Entry / Exit Road',
+    image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&h=450&fit=crop',
+    description: 'Grand boulevard entrance with 9m wide internal township roads.',
   },
   {
     id: 3,
-    title: 'Sports Arena',
-    image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop',
+    title: '40m Swimming Pool',
+    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&h=450&fit=crop',
+    description: 'Olympic-length pool within the township complex.',
   },
   {
     id: 4,
-    title: 'Fitness Centre',
-    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop',
+    title: 'Meditation Centre',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=450&fit=crop',
+    description: 'Dedicated space for yoga, meditation, and spiritual wellness.',
   },
   {
     id: 5,
-    title: 'Kids Play Zone',
-    image: 'https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=800&h=600&fit=crop',
+    title: 'Commercial Centre',
+    image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1200&h=450&fit=crop',
+    description: 'Retail and dining hub with branded outlets — Domino’s coming soon.',
   },
   {
     id: 6,
-    title: 'Landscaped Gardens',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop',
+    title: '25% Green Cover',
+    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&h=450&fit=crop',
+    description: 'Lush landscaped gardens and dedicated natural forest area.',
   },
   {
     id: 7,
-    title: 'Jogging & Cycling Track',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop',
+    title: 'Club & Recreation',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&h=450&fit=crop',
+    description: 'Full-featured clubhouse with sports, games, and recreation facilities.',
+  },
+  {
+    id: 8,
+    title: 'Resort-Style Township',
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=450&fit=crop',
+    description: 'Complete township with the look, feel, and amenities of a luxury resort.',
+  },
+  {
+    id: 9,
+    title: '24/7 Power Backup',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=450&fit=crop',
+    description: 'Uninterrupted power supply across the entire township.',
   },
 ];
 
@@ -61,7 +81,7 @@ export function CarouselSection() {
   const nextSlide = () => { setAutoPlay(false); setCurrentSlide(prev => (prev + 1) % slides.length); };
 
   return (
-    <section id="gallery" className="py-24 lg:py-32" style={{ background: 'var(--bg-secondary)' }}>
+    <section id="spaces" className="py-24 lg:py-32" style={{ background: 'var(--bg-secondary)' }}>
       <div className="px-6 lg:px-16 max-w-360 mx-auto">
 
         {/* Section Header */}
@@ -78,16 +98,21 @@ export function CarouselSection() {
         <div className="relative w-full group">
 
           {/* Main slide */}
-          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: '28/9' }}>
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] md:aspect-[28/9]">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
               >
                 <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%)' }} />
-                <div className="absolute bottom-8 left-8 lg:bottom-12 lg:left-12">
-                  <h3 className="text-3xl lg:text-5xl font-serif font-light text-white">{slide.title}</h3>
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 65%)' }} />
+                <div className="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 max-w-[90%] md:max-w-[70%]">
+                  <h3 className="text-2xl md:text-5xl font-serif font-light text-white mb-2 leading-tight">
+                    {slide.title}
+                  </h3>
+                  <p className="text-xs md:text-base font-light text-white/80 line-clamp-2 md:line-clamp-none">
+                    {slide.description}
+                  </p>
                 </div>
               </div>
             ))}

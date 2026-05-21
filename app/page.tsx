@@ -26,9 +26,9 @@ export default function Home() {
       <VideoSection />
       <LocationSection />
       <VisionSection />
-      <CarouselSection />
       <AmenitiesSection />
       <LifestyleSection />
+      <CarouselSection />
       <GallerySection />
       <BenefitsSection />
       <ContactSection />
