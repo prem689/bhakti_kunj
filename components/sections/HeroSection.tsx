@@ -7,6 +7,10 @@ import { Phone, ArrowRight, Download } from 'lucide-react';
 const SLIDES = [
   { src: '/hero/hero_section_bg.png', alt: 'Bhakti Kunj Township' },
   { src: '/hero/Shri-Radhe-Krishna-Seva.webp', alt: 'Shri Radhe Krishna — Sacred Braj' },
+  { src: '/hero/god-banke-bihari.jpg', alt: 'Shri Banke Bihari Ji — Vrindavan' },
+  { src: '/hero/shri-radha-raman-ji-vrindavan.JPG', alt: 'Shri Radha Raman Ji — Vrindavan' },
+  { src: '/hero/shri-radha-damodar-4.jpg', alt: 'Shri Radha Damodar Temple' },
+  { src: '/hero/HD-wallpaper-radha-govind-dev-ji-krishna-lord.jpg', alt: 'Radha Govind Dev Ji — Vrindavan' },
   { src: '/hero/Vishram_Ghat.jpg', alt: 'Vishram Ghat, Mathura' },
   { src: '/hero/places-to-visit-in-mathura-bharat-sair.webp', alt: 'Places to Visit in Mathura' },
   { src: '/hero/resort_one.avif', alt: 'Resort Style Living' },
