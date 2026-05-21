@@ -1,35 +1,32 @@
 import {
-  BookOpen,
-  Cross,
-  ShoppingCart,
-  Banknote,
-  Stethoscope,
+  Navigation,
   Waves,
-  Dumbbell,
+  HeartHandshake,
+  Building2,
+  ShoppingBag,
   Trees,
-  Utensils,
-  Shield,
+  Zap,
+  Flower2,
+  Dumbbell
 } from 'lucide-react';
 
 interface AmenityItem {
   icon: React.ReactNode;
   title: string;
   description: string;
+  highlight?: boolean;
 }
 
 const amenities: AmenityItem[] = [
-  { icon: <BookOpen className="w-8 h-8" />, title: 'School', description: 'Top educational institutions' },
-  { icon: <Cross className="w-8 h-8" />, title: 'Hospital', description: 'Multi-specialty healthcare' },
-  { icon: <ShoppingCart className="w-8 h-8" />, title: 'Shopping Mall', description: 'Retail therapy just steps away' },
-  { icon: <Banknote className="w-8 h-8" />, title: 'ATM & Banking', description: 'Banks & ATMs within township' },
-  { icon: <Stethoscope className="w-8 h-8" />, title: 'Medical', description: '24/7 medical & pharmacy services' },
-  { icon: <Waves className="w-8 h-8" />, title: 'Swimming Pool', description: 'Resort-style pool & kids pool' },
-  { icon: <Dumbbell className="w-8 h-8" />, title: 'Jogging Track', description: 'Scenic tracks for a healthy lifestyle' },
-  { icon: <Utensils className="w-8 h-8" />, title: 'Grocery Store', description: 'Daily essentials at your doorstep' },
-  { icon: <Trees className="w-8 h-8" />, title: 'Multipurpose Hall', description: 'Events & celebrations made special' },
-  { icon: <Waves className="w-8 h-8" />, title: 'Park', description: 'Green spaces for yoga & harmony' },
-  { icon: <Dumbbell className="w-8 h-8" />, title: 'Sports Arena', description: 'Indoor & outdoor sports facilities' },
-  { icon: <Shield className="w-8 h-8" />, title: 'Security', description: 'Safe & secure living environment' },
+  { icon: <HeartHandshake className="w-10 h-10" />, title: 'Gaushala', description: 'Dedicated cow sanctuary honouring the spirit of Braj.', highlight: true },
+  { icon: <Navigation className="w-8 h-8" />, title: '40m Entry / Exit Road', description: 'Grand boulevard entrance with 9m wide internal roads.' },
+  { icon: <Waves className="w-8 h-8" />, title: '40m Swimming Pool', description: 'Olympic-length pool within the township complex.' },
+  { icon: <Building2 className="w-8 h-8" />, title: 'Resort-Style Township', description: 'Complete township with the look & feel of a luxury resort.' },
+  { icon: <ShoppingBag className="w-8 h-8" />, title: 'Commercial Centre', description: 'Retail and dining hub — Domino’s coming soon.' },
+  { icon: <Trees className="w-8 h-8" />, title: '25% Green Cover', description: 'Lush landscaped gardens and dedicated natural forest area.' },
+  { icon: <Zap className="w-8 h-8" />, title: '24/7 Power Backup', description: 'Uninterrupted power supply across the entire township.' },
+  { icon: <Flower2 className="w-8 h-8" />, title: 'Meditation Centre', description: 'Dedicated space for yoga, meditation, and wellness.' },
+  { icon: <Dumbbell className="w-8 h-8" />, title: 'Club & Recreation', description: 'Full-featured clubhouse with sports & recreation facilities.' },
 ];
 
 export function AmenitiesSection() {
@@ -59,22 +56,24 @@ export function AmenitiesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-[11px] font-medium uppercase mb-4" style={{ color: '#C8A96B', letterSpacing: '4px' }}>
-            EVERYTHING IN ONE PLACE
+            SPACES FOR EVERY MOMENT
           </p>
           <h2 className="text-4xl lg:text-5xl font-serif font-light text-white">
-            All You Need, Right Inside Your{' '}
-            <span style={{ color: '#C8A96B' }}>Township</span>
+            World-Class <span style={{ color: '#C8A96B' }}>Facilities</span>
           </h2>
         </div>
 
         {/* Amenities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {amenities.map((amenity, index) => (
-            <div key={index} className="luxury-card rounded-xl p-8 flex flex-col items-center text-center">
+            <div key={index} className={`luxury-card rounded-xl p-8 flex flex-col items-center text-center ${amenity.highlight ? 'border-[#C8A96B] md:col-span-2 lg:col-span-3 lg:w-2/3 mx-auto' : ''}`} style={{ background: amenity.highlight ? 'linear-gradient(135deg, rgba(200,169,107,0.1) 0%, rgba(0,0,0,0.5) 100%)' : 'var(--card-bg)' }}>
+              {amenity.highlight && (
+                <div className="mb-3 text-xs uppercase tracking-widest font-bold" style={{ color: '#C8A96B' }}>Main Highlight</div>
+              )}
               <div className="card-icon mb-5" style={{ color: '#C8A96B' }}>
                 {amenity.icon}
               </div>
-              <h3 className="text-base font-semibold text-white mb-2">{amenity.title}</h3>
+              <h3 className={`${amenity.highlight ? 'text-2xl' : 'text-base'} font-semibold text-white mb-2`}>{amenity.title}</h3>
               <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {amenity.description}
               </p>

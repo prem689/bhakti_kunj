@@ -13,29 +13,27 @@ interface Dest {
 }
 
 const DESTS: Dest[] = [
-  { id: 'highway',  short: 'N. HIGHWAY',    time: '5 MIN',  mx: 678, my: 268, anchor: 'right'  },
-  { id: 'airport',  short: 'AIRPORT',        time: '25 MIN', mx: 625, my: 82,  anchor: 'top'    },
-  { id: 'metro',    short: 'METRO STN.',     time: '10 MIN', mx: 572, my: 466, anchor: 'right'  },
-  { id: 'school',   short: 'INTL. SCHOOL',   time: '8 MIN',  mx: 106, my: 118, anchor: 'top'    },
-  { id: 'hospital', short: 'HOSPITAL',       time: '12 MIN', mx: 48,  my: 278, anchor: 'right'  },
-  { id: 'mall',     short: 'SHOPPING MALL',  time: '15 MIN', mx: 352, my: 510, anchor: 'bottom' },
-  { id: 'business', short: 'BUSINESS DIST.', time: '20 MIN', mx: 305, my: 68,  anchor: 'top'    },
-  { id: 'railway',  short: 'RAILWAY STN.',   time: '18 MIN', mx: 118, my: 462, anchor: 'bottom' },
+  { id: 'highway',  short: 'MATHURA HWY',    time: 'PRIME',   mx: 678, my: 268, anchor: 'right'  },
+  { id: 'mathura',  short: 'MATHURA CITY',   time: '20 MIN',  mx: 572, my: 466, anchor: 'right'  },
+  { id: 'vrindavan',short: 'VRINDAVAN',      time: 'NEAR',    mx: 106, my: 118, anchor: 'top'    },
+  { id: 'govardhan',short: 'GOVARDHAN',      time: 'NEAR',    mx: 48,  my: 278, anchor: 'right'  },
+  { id: 'railway',  short: 'MATHURA JN.',    time: 'HUB',     mx: 352, my: 510, anchor: 'bottom' },
+  { id: 'airport',  short: 'AGRA AIRPORT',   time: '50 MIN',  mx: 625, my: 82,  anchor: 'top'    },
+  { id: 'delhi',    short: 'DELHI NCR',      time: '2.5 HRS', mx: 305, my: 68,  anchor: 'top'    },
 ];
 
-const PARTICLE_DURS = ['2.2s','2.8s','2.5s','2.1s','2.3s','2.6s','2.4s','2.7s'];
-const FLOAT_DURS    = ['3.0s','3.5s','2.8s','4.0s','3.2s','3.8s','2.6s','3.6s'];
-const FLOAT_DELAYS  = ['0s',  '0.6s','0.3s','0.9s','0.2s','0.8s','0.4s','1.1s'];
+const PARTICLE_DURS = ['2.2s','2.8s','2.5s','2.1s','2.3s','2.6s','2.4s'];
+const FLOAT_DURS    = ['3.0s','3.5s','2.8s','4.0s','3.2s','3.8s','2.6s'];
+const FLOAT_DELAYS  = ['0s',  '0.6s','0.3s','0.9s','0.2s','0.8s','0.4s'];
 
 const LEFT_ITEMS = [
-  { id: 'highway',  label: 'National Highway',          time: '5 Mins',  Icon: Navigation },
-  { id: 'airport',  label: 'Airport',                   time: '25 Mins', Icon: Plane       },
-  { id: 'metro',    label: 'Metro Station',              time: '10 Mins', Icon: Zap         },
-  { id: 'school',   label: 'International School',       time: '8 Mins',  Icon: BookOpen    },
-  { id: 'hospital', label: 'Multi-speciality Hospital',  time: '12 Mins', Icon: Plus        },
-  { id: 'mall',     label: 'Shopping Mall',              time: '15 Mins', Icon: ShoppingBag },
-  { id: 'business', label: 'Business District',          time: '20 Mins', Icon: Building2   },
-  { id: 'railway',  label: 'Railway Station',            time: '18 Mins', Icon: Train       },
+  { id: 'highway',  label: 'Mathura–Bharatpur Highway', time: 'Prime',   Icon: Navigation },
+  { id: 'mathura',  label: 'Mathura (Delhi–Agra Exp)',  time: '20 Mins', Icon: Zap        },
+  { id: 'vrindavan',label: 'Vrindavan',                 time: 'Nearby',  Icon: Building2  },
+  { id: 'govardhan',label: 'Govardhan',                 time: 'Nearby',  Icon: Building2  },
+  { id: 'railway',  label: 'Mathura Junction',          time: 'Hub',     Icon: Train      },
+  { id: 'airport',  label: 'Agra Airport (Kheria)',     time: '50 Mins', Icon: Plane      },
+  { id: 'delhi',    label: 'Delhi NCR (Yamuna Exp)',    time: '2.5 Hrs', Icon: Navigation },
 ];
 
 function LabelCard({ d, isHov }: { d: Dest; isHov: boolean }) {

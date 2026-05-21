@@ -60,7 +60,7 @@ export function VideoSection() {
 
             <p className="text-[11px] font-medium uppercase mb-5"
               style={{ color: '#C8A96B', letterSpacing: '4px' }}>
-              INTRODUCTION
+              SITE PREVIEW
             </p>
 
             <h2 className="text-4xl lg:text-5xl font-serif font-light mb-6 leading-tight"

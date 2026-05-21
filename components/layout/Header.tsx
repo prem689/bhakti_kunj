@@ -37,7 +37,7 @@ export function Header() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50"
+        className="fixed top-0 left-0 right-0 w-full z-50"
         style={{
           height: scrolled ? '72px' : '100px',
           background: scrolled ? 'var(--header-bg)' : 'transparent',
@@ -48,7 +48,7 @@ export function Header() {
           transition: 'height 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease',
         }}
       >
-        <div className="max-w-[1440px] mx-auto px-10 lg:px-14 h-full flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-14 h-full flex items-center justify-between w-full">
 
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 shrink-0 group">
@@ -59,7 +59,7 @@ export function Header() {
               height={48}
               className="rounded-full transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(200,169,107,0.6)]"
             />
-            <div>
+            <div className="hidden sm:block">
               <div className="font-serif text-sm tracking-[0.3em] leading-tight" style={{ color: scrolled ? 'var(--text-primary)' : 'white' }}>
                 BHAKTI KUNJ
               </div>
@@ -98,7 +98,7 @@ export function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0 ml-auto lg:ml-0">
             {/* CTA — pill gold gradient */}
             <a
               href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
@@ -114,7 +114,7 @@ export function Header() {
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
                 style={{
                   background: scrolled ? 'var(--card-bg-hover)' : 'rgba(0,0,0,0.3)',
                   border: scrolled ? '1px solid var(--border-subtle)' : '1px solid rgba(255,255,255,0.15)',
@@ -122,7 +122,7 @@ export function Header() {
                 }}
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
               </button>
             )}
 

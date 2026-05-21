@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
-import { ChevronDown, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, ArrowRight, Download } from 'lucide-react';
 
 const SLIDES = [
   { src: '/hero/hero_section_bg.png', alt: 'Bhakti Kunj Township' },
@@ -80,21 +80,21 @@ export function HeroSection() {
       {/* ── Main Content ── */}
       <div className="relative z-20 h-full w-full flex flex-col">
 
-        <div className="flex-1 flex flex-col justify-center px-6 lg:px-16 pt-28 pb-20">
-          <div className="max-w-6xl">
+        <div className="flex-1 flex flex-col justify-center px-6 lg:px-16 pt-20 pb-12">
+          <div className="max-w-2xl lg:max-w-6xl">
             <p
-              className="text-xs lg:text-sm font-medium uppercase mb-8"
+              className="text-[9px] lg:text-xs xl:text-sm font-medium uppercase mb-4 lg:mb-8"
               style={{ color: '#C8A96B', letterSpacing: '4px' }}
             >
               Bhakti Kunj — Mathura&apos;s most rapidly developing luxury destination
             </p>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif font-light text-white mb-8 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-6xl xl:text-7xl font-serif font-light text-white mb-4 lg:mb-8 leading-tight">
               Escape the Ordinary.
               <br />
               <span style={{ color: '#C8A96B' }}>Embrace the Extraordinary.</span>
             </h1>
             <div
-              className="text-base lg:text-lg font-light leading-relaxed mb-12 max-w-xl space-y-2"
+              className="hidden sm:block text-xs sm:text-base lg:text-lg font-light leading-relaxed mb-6 lg:mb-12 max-w-md lg:max-w-xl space-y-1 lg:space-y-2"
               style={{ color: 'var(--text-secondary)' }}
             >
               <p>• Wake Up to Greenery, Not Traffic.</p>
@@ -104,41 +104,43 @@ export function HeroSection() {
             </div>
 
             {/* ── Investment Plan Highlight Strip — only on mobile & tablet (desktop has right-side stats) ── */}
-            <div className="flex flex-wrap gap-3 mb-8 lg:hidden">
+            <div className="flex flex-wrap gap-1.5 sm:gap-3 mb-10 sm:mb-8 lg:hidden">
               {[
                 { value: '₹4,000/mo', label: 'Guaranteed Rental Income' },
-                { value: '3 Years',   label: 'Rental Guarantee Period' },
-                { value: 'Save 75%',  label: 'vs Resort Market' },
-                { value: '143',       label: 'Govt. Approved' },
+                { value: '3 Years', label: 'Rental Guarantee Period' },
+                { value: 'Save 75%', label: 'vs Resort Market' },
+                { value: '143', label: 'Govt. Approved' },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col px-4 py-3 rounded-xl"
+                  className="flex flex-col px-2 py-1 sm:px-4 sm:py-3 rounded-md sm:rounded-xl"
                   style={{
                     background: 'rgba(200,169,107,0.12)',
                     border: '1px solid rgba(200,169,107,0.35)',
                     backdropFilter: 'blur(8px)',
                   }}
                 >
-                  <span className="text-base font-bold" style={{ color: '#C8A96B' }}>{item.value}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-white/60 mt-0.5">{item.label}</span>
+                  <span className="text-[10px] sm:text-base font-bold" style={{ color: '#C8A96B' }}>{item.value}</span>
+                  <span className="text-[7px] sm:text-[10px] uppercase tracking-wider text-white/60 mt-0.5" style={{ lineHeight: '1.2' }}>{item.label}</span>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-row gap-2 lg:gap-4">
               <button
-                className="gold-btn px-8 py-3.5 rounded-full text-sm font-semibold uppercase text-black inline-flex items-center justify-center gap-2 w-fit"
+                className="gold-btn px-3.5 py-1.5 sm:px-5 sm:py-2.5 lg:px-8 lg:py-3.5 rounded-full text-[10px] sm:text-xs lg:text-sm font-semibold uppercase text-black inline-flex items-center justify-center gap-1.5 lg:gap-2 w-fit"
                 style={{ letterSpacing: '1px' }}
+                aria-label="Explore Township"
               >
-                Explore Township
-                <span>→</span>
+                <span className="sm:hidden">Explore</span>
+                <span className="hidden sm:inline">Explore Township</span>
+                <ArrowRight className="hidden sm:block w-4 h-4" />
               </button>
               <a
                 href="/brochure/Bhakti kunj trifold.pdf"
                 download="Bhakti Kunj Brochure.pdf"
-                className="glass-pill px-8 py-3.5 rounded-full text-sm font-semibold uppercase inline-flex items-center justify-center gap-2 w-fit transition-all duration-300"
+                className="glass-pill p-2.5 sm:px-5 sm:py-2.5 lg:px-8 lg:py-3.5 rounded-full text-[10px] sm:text-xs lg:text-sm font-semibold uppercase inline-flex items-center justify-center gap-1.5 lg:gap-2 w-fit transition-all duration-300"
                 style={{
                   color: 'rgba(255,255,255,0.9)',
                   border: '1px solid rgba(255,255,255,0.22)',
@@ -158,30 +160,31 @@ export function HeroSection() {
                   el.style.background = 'var(--card-bg-hover)';
                   el.style.color = '';
                 }}
+                aria-label="Download Brochure"
               >
-                Download Brochure
-                <span>↓</span>
+                <span className="hidden sm:inline">Download Brochure</span>
+                <Download className="w-4 h-4" />
               </a>
             </div>
 
             {/* Contact links */}
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-5 lg:mt-10 flex flex-wrap items-center gap-4 lg:gap-6">
               <a
                 href="tel:9810164924"
-                className="flex items-center gap-2 text-sm font-medium hover:underline transition-opacity hover:opacity-80"
+                className="flex items-center gap-1.5 lg:gap-2 text-xs lg:text-sm font-medium hover:underline transition-opacity hover:opacity-80"
                 style={{ color: '#C8A96B' }}
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
                 9810164924
               </a>
               <a
                 href="https://instagram.com/BHAKTIKUNJ7"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-sm font-medium hover:underline transition-opacity hover:opacity-80"
+                className="flex items-center gap-1.5 lg:gap-2 text-xs lg:text-sm font-medium hover:underline transition-opacity hover:opacity-80"
                 style={{ color: '#C8A96B' }}
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-3.5 h-3.5 lg:w-4 lg:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -197,22 +200,21 @@ export function HeroSection() {
           <span className="text-[10px] font-light uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
             Scroll to explore
           </span>
-          <ChevronDown className="w-4 h-4" style={{ color: '#C8A96B' }} />
         </div>
       </div>
 
       {/* ── Right Side Stats ── */}
-      <div className="absolute right-0 top-0 h-full z-20 hidden lg:flex flex-col justify-center pr-16">
-        <div className="space-y-14">
+      <div className="absolute right-0 top-0 h-full z-20 hidden lg:flex flex-col justify-center pr-10 lg:pr-16">
+        <div className="space-y-6 lg:space-y-14">
           {[
             { value: '₹4,000', label: '/ MONTH RENTAL INCOME' },
-            { value: '1.5×', label: 'BUY BACK IN 3 YEARS' },
+            { value: '₹25,000', label: 'BASE PRICE / SQYD' },
             { value: 'Sold Out', label: 'PHASE 1' },
             { value: '143', label: 'APPROVED' },
           ].map((stat, i) => (
             <div key={i} className="text-right">
-              <p className="text-5xl font-serif font-light" style={{ color: '#C8A96B' }}>{stat.value}</p>
-              <p className="text-[10px] font-light tracking-wide mt-1.5" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-2xl lg:text-5xl font-serif font-light" style={{ color: '#C8A96B' }}>{stat.value}</p>
+              <p className="text-[8px] lg:text-[10px] font-light tracking-wide mt-1 lg:mt-1.5" style={{ color: 'var(--text-muted)' }}>
                 {stat.label}
               </p>
             </div>
@@ -220,34 +222,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* ── Slider Controls ── */}
-      {/* Prev / Next arrows */}
-      <button
-        onClick={prev}
-        aria-label="Previous slide"
-        className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-        style={{
-          background: 'rgba(0,0,0,0.5)',
-          border: '1px solid rgba(200,169,107,0.35)',
-          backdropFilter: 'blur(6px)',
-          color: '#C8A96B',
-        }}
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-      <button
-        onClick={next}
-        aria-label="Next slide"
-        className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-        style={{
-          background: 'rgba(0,0,0,0.5)',
-          border: '1px solid rgba(200,169,107,0.35)',
-          backdropFilter: 'blur(6px)',
-          color: '#C8A96B',
-        }}
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
+
 
       {/* Dot indicators */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">

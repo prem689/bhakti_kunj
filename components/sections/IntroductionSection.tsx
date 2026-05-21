@@ -4,7 +4,11 @@ import { ShieldCheck, Award, Star, History } from 'lucide-react';
 
 export function IntroductionSection() {
   return (
-    <section id="introduction" className="py-24 lg:py-32 relative overflow-hidden bg-black">
+    <section
+      id="introduction"
+      className="py-24 lg:py-32 relative overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%)' }}
+    >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'radial-gradient(circle at 10% 50%, rgba(200,169,107,0.05) 0%, transparent 50%)',

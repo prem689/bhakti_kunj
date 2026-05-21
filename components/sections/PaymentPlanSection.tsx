@@ -36,7 +36,7 @@ export function PaymentPlanSection() {
       features: [
         'Easy, stress-free instalments',
         'Exciting gifts on booking',
-        '₹23,000 per Square Yard rate'
+        'Consistent transparent pricing'
       ],
       icon: <CreditCard className="w-8 h-8" />,
       popular: false
@@ -44,7 +44,11 @@ export function PaymentPlanSection() {
   ];
 
   return (
-    <section id="payment-plans" className="py-24 lg:py-32 relative bg-black">
+    <section
+      id="payment-plans"
+      className="py-24 lg:py-32 relative"
+      style={{ background: 'linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%)' }}
+    >
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'radial-gradient(ellipse at center, rgba(200,169,107,0.05) 0%, transparent 60%)',
@@ -64,26 +68,26 @@ export function PaymentPlanSection() {
           </p>
         </div>
 
-        {/* Highlight Banner: Booking Amount & Price */}
+        {/* Segregated & Highlighted Core Pricing Details */}
         <div className="flex flex-col md:flex-row gap-6 mb-16">
-          <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
-            <div className="p-4 rounded-full bg-white/5">
-              <CreditCard className="w-6 h-6 text-[#C8A96B]" />
+          <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(200,169,107,0.3)', background: 'rgba(200,169,107,0.02)' }}>
+            <div className="p-4 rounded-full bg-white/5" style={{ color: '#C8A96B' }}>
+              <CreditCard className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-1">Booking Amount</p>
-              <h3 className="text-2xl font-serif text-white">₹25,000 to ₹1,00,000</h3>
-              <p className="text-white/40 text-sm mt-1">Secures your plot and locks in the current price.</p>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Booking Amount</p>
+              <h3 className="text-3xl font-serif text-[#C8A96B]">₹1,00,000 <span className="text-lg text-white/50 font-sans font-light">(1 Lakh)</span></h3>
+              <p className="text-white/40 text-sm mt-1">Secures your chosen plot and locks in the price.</p>
             </div>
           </div>
-          <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
-            <div className="p-4 rounded-full bg-white/5">
-              <Wallet className="w-6 h-6 text-[#C8A96B]" />
+          <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(200,169,107,0.3)', background: 'rgba(200,169,107,0.02)' }}>
+            <div className="p-4 rounded-full bg-white/5" style={{ color: '#C8A96B' }}>
+              <Wallet className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-1">Base Price</p>
-              <h3 className="text-2xl font-serif text-white">₹21,000 <span className="text-lg text-white/50">/ SqYd</span></h3>
-              <p className="text-white/40 text-sm mt-1">Except for Flexible EMI Plan.</p>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Plot Base Price</p>
+              <h3 className="text-3xl font-serif text-[#C8A96B]">₹25,000 <span className="text-lg text-white/50 font-sans font-light">/ SqYd</span></h3>
+              <p className="text-white/40 text-sm mt-1">Transparent premium freehold plot pricing.</p>
             </div>
           </div>
         </div>
