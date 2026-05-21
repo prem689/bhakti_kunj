@@ -27,13 +27,13 @@ const FLOAT_DURS    = ['3.0s','3.5s','2.8s','4.0s','3.2s','3.8s','2.6s'];
 const FLOAT_DELAYS  = ['0s',  '0.6s','0.3s','0.9s','0.2s','0.8s','0.4s'];
 
 const LEFT_ITEMS = [
-  { id: 'highway',  label: 'Mathura–Bharatpur Highway', time: 'Prime',   Icon: Navigation },
-  { id: 'mathura',  label: 'Mathura (Delhi–Agra Exp)',  time: '20 Mins', Icon: Zap        },
-  { id: 'vrindavan',label: 'Vrindavan',                 time: 'Nearby',  Icon: Building2  },
-  { id: 'govardhan',label: 'Govardhan',                 time: 'Nearby',  Icon: Building2  },
-  { id: 'railway',  label: 'Mathura Junction',          time: 'Hub',     Icon: Train      },
-  { id: 'airport',  label: 'Agra Airport (Kheria)',     time: '50 Mins', Icon: Plane      },
-  { id: 'delhi',    label: 'Delhi NCR (Yamuna Exp)',    time: '2.5 Hrs', Icon: Navigation },
+  { id: 'highway',  label: 'Mathura–Bharatpur Highway', desc: 'Prime location in the sacred Braj region.', time: 'Prime', Icon: Navigation },
+  { id: 'mathura',  label: '20 Minutes from Mathura', desc: 'Easy access via Delhi–Agra Expressway.', time: '20 Mins', Icon: Zap },
+  { id: 'vrindavan',label: 'Near Vrindavan', desc: 'Heart of the sacred Braj Mandal Dhaam.', time: 'Nearby', Icon: Building2 },
+  { id: 'govardhan',label: 'Near Govardhan', desc: 'Heart of the sacred Braj Mandal Dhaam.', time: 'Nearby', Icon: Building2 },
+  { id: 'railway',  label: 'Mathura Junction', desc: 'Major railway hub nearby.', time: 'Hub', Icon: Train },
+  { id: 'airport',  label: 'Agra Airport', desc: 'Kheria Airport approx. 50 min drive.', time: '50 Mins', Icon: Plane },
+  { id: 'delhi',    label: 'Delhi NCR Access', desc: 'Yamuna Expressway — approx. 2.5 hrs from Delhi.', time: '2.5 Hrs', Icon: Navigation },
 ];
 
 function LabelCard({ d, isHov }: { d: Dest; isHov: boolean }) {
@@ -143,12 +143,20 @@ export function LocationSection() {
                       transition: 'color 0.3s ease',
                     }} />
                   </div>
-                  <span className="flex-1 text-sm font-light" style={{
-                    color: isHov ? 'var(--text-primary)' : 'var(--text-secondary)',
-                    transition: 'color 0.3s ease',
-                  }}>
-                    {item.label}
-                  </span>
+                  <div className="flex-1 flex flex-col">
+                    <span className="text-sm font-medium" style={{
+                      color: isHov ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      transition: 'color 0.3s ease',
+                    }}>
+                      {item.label}
+                    </span>
+                    <span className="text-xs font-light mt-0.5" style={{
+                      color: isHov ? 'var(--text-secondary)' : 'var(--text-muted)',
+                      transition: 'color 0.3s ease',
+                    }}>
+                      {item.desc}
+                    </span>
+                  </div>
                   <span className="text-sm font-bold" style={{ color: '#C8A96B' }}>
                     {item.time}
                   </span>
