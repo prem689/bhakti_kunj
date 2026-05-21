@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { IntroductionSection } from '@/components/sections/IntroductionSection';
+import { TeamSection } from '@/components/sections/TeamSection';
 import { MasterPlanSection } from '@/components/sections/MasterPlanSection';
 import { PaymentPlanSection } from '@/components/sections/PaymentPlanSection';
 import { LocationSection } from '@/components/sections/LocationSection';
@@ -21,6 +22,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <IntroductionSection />
+      <TeamSection />
       <MasterPlanSection />
       <PaymentPlanSection />
       <VideoSection />
