@@ -170,12 +170,20 @@ export function HeroSection() {
             {/* Contact links */}
             <div className="mt-5 lg:mt-10 flex flex-wrap items-center gap-4 lg:gap-6">
               <a
-                href="tel:9810164924"
+                href="tel:+917900333103"
                 className="flex items-center gap-1.5 lg:gap-2 text-xs lg:text-sm font-medium hover:underline transition-opacity hover:opacity-80"
                 style={{ color: '#C8A96B' }}
               >
                 <Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
-                9810164924
+                +91 79003 33 103
+              </a>
+              <a
+                href="tel:+917900333101"
+                className="flex items-center gap-1.5 lg:gap-2 text-xs lg:text-sm font-medium hover:underline transition-opacity hover:opacity-80"
+                style={{ color: '#C8A96B' }}
+              >
+                <Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                +91 79003 33 101
               </a>
               <a
                 href="https://instagram.com/BHAKTIKUNJ7"
@@ -189,7 +197,7 @@ export function HeroSection() {
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
-                @BHAKTIKUNJ7
+                BHAKTIKUNJ7
               </a>
             </div>
           </div>

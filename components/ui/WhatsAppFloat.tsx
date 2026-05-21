@@ -7,7 +7,7 @@ export function WhatsAppFloat() {
 
   return (
     <a
-      href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+      href="https://wa.me/919810164924?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

@@ -101,7 +101,7 @@ export function Header() {
           <div className="flex items-center gap-2 sm:gap-4 shrink-0 ml-auto lg:ml-0">
             {/* CTA — pill gold gradient */}
             <a
-              href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+              href="https://wa.me/919810164924?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center text-[10px] font-semibold uppercase text-black rounded-full px-6 py-3 gold-btn"
@@ -185,7 +185,7 @@ export function Header() {
           </nav>
 
           <a
-            href="https://wa.me/917055050551?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
+            href="https://wa.me/919810164924?text=Hi%21%20I%27m%20interested%20in%20Bhakti%20Kunj%20Township%20and%20would%20like%20to%20book%20a%20site%20visit.%20Please%20get%20in%20touch%20with%20me."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-12 px-10 py-4 rounded-full text-xs font-semibold uppercase text-black gold-btn"

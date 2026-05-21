@@ -55,15 +55,16 @@ export function ContactSection() {
             <h3 className="text-2xl font-serif text-white mb-8">Get In Touch</h3>
             
             <div className="space-y-6">
-              <a href="tel:9810164924" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#C8A96B]/20 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" style={{ color: '#C8A96B' }} />
                 </div>
                 <div>
                   <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Call Us</p>
-                  <p className="text-white font-medium text-lg">9810164924</p>
+                  <a href="tel:+917900333103" className="block text-white font-medium text-lg hover:text-gold transition-colors">+91 79003 33 103</a>
+                  <a href="tel:+917900333101" className="block text-white font-medium text-lg hover:text-gold transition-colors">+91 79003 33 101</a>
                 </div>
-              </a>
+              </div>
 
               <a href="https://wa.me/919810164924" target="_blank" rel="noreferrer" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#C8A96B]/20 transition-colors">

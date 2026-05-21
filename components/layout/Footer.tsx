@@ -120,8 +120,8 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">CONTACT</h4>
             <ul className="space-y-4">
               {[
-                { Icon: Phone, text: '+91 70550 50551' },
-                { Icon: Phone, text: '+91 79003 33101' },
+                { Icon: Phone, text: '+91 79003 33 103' },
+                { Icon: Phone, text: '+91 79003 33 101' },
                 { Icon: MapPin, text: '301, 2nd Floor, AGCR Enclave, Near Karkardooma Court, Delhi' },
                 { Icon: Clock, text: 'Mon – Sun, 9:00 AM – 9:00 PM' },
               ].map(({ Icon, text }) => (
