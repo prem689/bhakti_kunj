@@ -20,7 +20,7 @@ const slides: CarouselItem[] = [
   {
     id: 2,
     title: '40m Entry / Exit Road',
-    image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&h=450&fit=crop',
+    image: '/site_images/carousel_entry_exit.png',
     description: 'Grand boulevard entrance with 9m wide internal township roads.',
   },
   {
@@ -50,7 +50,7 @@ const slides: CarouselItem[] = [
   {
     id: 7,
     title: 'Club & Recreation',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&h=450&fit=crop',
+    image: '/site_images/carousel_club_recreation.png',
     description: 'Full-featured clubhouse with sports, games, and recreation facilities.',
   },
   {
@@ -62,7 +62,7 @@ const slides: CarouselItem[] = [
   {
     id: 9,
     title: '24/7 Power Backup',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=450&fit=crop',
+    image: '/site_images/carousel_power_backup.png',
     description: 'Uninterrupted power supply across the entire township.',
   },
 ];
