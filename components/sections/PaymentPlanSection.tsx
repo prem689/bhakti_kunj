@@ -19,8 +19,8 @@ export function PaymentPlanSection() {
     },
     {
       id: '02',
-      title: '30 / 90 Payment Plan',
-      timeline: '25% in 30 days + 75% in 90 days',
+      title: '25 : 75 Payment Plan',
+      timeline: '25% within 30 days + 75% within 90 days',
       features: [
         'Exciting offer',
         '1 Offer + Gift',
@@ -32,7 +32,7 @@ export function PaymentPlanSection() {
     {
       id: '03',
       title: 'Flexible EMI Plan',
-      timeline: '25% every quarter over 12 months',
+      timeline: '25% every quarter spanning over 12 months',
       features: [
         'Easy, stress-free instalments',
         'Exciting gifts on booking',
@@ -77,7 +77,7 @@ export function PaymentPlanSection() {
             <div>
               <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Booking Amount</p>
               <h3 className="text-3xl font-serif text-[#C8A96B]">₹1,00,000 <span className="text-lg text-white/50 font-sans font-light">(1 Lakh)</span></h3>
-              <p className="text-white/40 text-sm mt-1">Secures your chosen plot and locks in the price.</p>
+              <p className="text-white/40 text-sm mt-1">Secures plot & locks in price.</p>
             </div>
           </div>
           <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(200,169,107,0.3)', background: 'rgba(200,169,107,0.02)' }}>
@@ -85,9 +85,19 @@ export function PaymentPlanSection() {
               <Wallet className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Plot Base Price</p>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Pre-Launch Price</p>
               <h3 className="text-3xl font-serif text-[#C8A96B]">₹25,000 <span className="text-lg text-white/50 font-sans font-light">/ SqYd</span></h3>
-              <p className="text-white/40 text-sm mt-1">Transparent premium freehold plot pricing.</p>
+              <p className="text-white/40 text-sm mt-1">Introductory special price.</p>
+            </div>
+          </div>
+          <div className="flex-1 glass-panel p-6 lg:p-8 rounded-2xl flex items-center gap-6" style={{ border: '1px solid rgba(200,169,107,0.3)', background: 'rgba(200,169,107,0.02)' }}>
+            <div className="p-4 rounded-full bg-white/5" style={{ color: '#C8A96B' }}>
+              <Wallet className="w-6 h-6" />
+            </div>
+            <div>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Launching Price</p>
+              <h3 className="text-3xl font-serif text-[#C8A96B]">₹30,000 <span className="text-lg text-white/50 font-sans font-light">/ SqYd</span></h3>
+              <p className="text-white/40 text-sm mt-1">Standard launch rate.</p>
             </div>
           </div>
         </div>

@@ -22,7 +22,6 @@ export default function Home() {
       <Header />
       <HeroSection />
       <IntroductionSection />
-      <TeamSection />
       <MasterPlanSection />
       <PaymentPlanSection />
       <VideoSection />
@@ -33,6 +32,7 @@ export default function Home() {
       <CarouselSection />
       <GallerySection />
       <BenefitsSection />
+      <TeamSection />
       <ContactSection />
       <Footer />
       <WhatsAppFloat />

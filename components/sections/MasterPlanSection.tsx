@@ -6,7 +6,7 @@ export function MasterPlanSection() {
   const plots = [
     { size: '100', unit: 'Sq. Yards', dim: '45 ft × 20 ft', price: '₹25,000', popular: false },
     { size: '200', unit: 'Sq. Yards', dim: '30 ft × 60 ft', price: '₹25,000', popular: true },
-    { size: '600', unit: 'Sq. Yards', dim: '100 ft × 60 ft', price: '₹25,000', popular: false },
+    { size: '500', unit: 'Sq. Yards', dim: '90 ft × 50 ft', price: '₹25,000', popular: false },
   ];
 
   const approvals = [
@@ -119,7 +119,7 @@ export function MasterPlanSection() {
                       </p>
                       <div className="grid grid-cols-2 gap-2 sm:gap-4">
                         <div className="p-2 sm:p-3 rounded-lg bg-white/5 border border-white/10">
-                          <p className="text-xs uppercase text-white/50 mb-0.5">Bhakti Kunj</p>
+                          <p className="text-xs uppercase text-white/50 mb-0.5">Pre-Launch Price</p>
                           <p className="text-sm sm:text-base text-[#C8A96B] font-medium flex flex-wrap items-baseline gap-0.5">
                             <span>₹25,000</span>
                             <span className="text-[10px] sm:text-xs text-white/50 font-light">/ SqYd</span>

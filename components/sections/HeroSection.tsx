@@ -110,10 +110,10 @@ export function HeroSection() {
             {/* ── Investment Plan Highlight Strip — only on mobile & tablet (desktop has right-side stats) ── */}
             <div className="flex flex-wrap gap-1.5 sm:gap-3 mb-10 sm:mb-8 lg:hidden">
               {[
-                { value: '₹4,000/mo', label: 'Guaranteed Rental Income' },
-                { value: '3 Years', label: 'Rental Guarantee Period' },
-                { value: 'Save 75%', label: 'vs Resort Market' },
-                { value: '143', label: 'Govt. Approved' },
+                { value: '₹25,000', label: 'Pre-Launch / SqYd' },
+                { value: '₹30,000', label: 'Launching / SqYd' },
+                { value: '100-500', label: 'Plot Sq. Yards' },
+                { value: '₹4,000/mo', label: 'Rental Income' },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -219,10 +219,10 @@ export function HeroSection() {
       <div className="absolute right-0 top-0 h-full z-20 hidden lg:flex flex-col justify-center pr-10 lg:pr-16">
         <div className="space-y-6 lg:space-y-14">
           {[
+            { value: '₹25,000', label: 'PRE-LAUNCH PRICE / SQYD' },
+            { value: '₹30,000', label: 'LAUNCHING PRICE / SQYD' },
+            { value: '100-500', label: 'PLOT SIZES (SQ YARDS)' },
             { value: '₹4,000', label: '/ MONTH RENTAL INCOME' },
-            { value: '₹25,000', label: 'BASE PRICE / SQYD' },
-            { value: 'Sold Out', label: 'PHASE 1' },
-            { value: '143', label: 'APPROVED' },
           ].map((stat, i) => (
             <div key={i} className="text-right">
               <p className="text-2xl lg:text-5xl font-serif font-light" style={{ color: '#C8A96B' }}>{stat.value}</p>
