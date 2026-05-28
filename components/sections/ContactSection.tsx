@@ -72,7 +72,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-xs text-white/50 uppercase tracking-widest mb-1">WhatsApp</p>
-                  <p className="text-white font-medium text-lg">9810164924</p>
+                  <p className="text-white font-medium text-lg">+919810164924</p>
                 </div>
               </a>
 
