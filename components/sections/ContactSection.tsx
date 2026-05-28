@@ -6,9 +6,9 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 lg:py-32 relative bg-black border-t border-white/10">
       <div className="px-6 lg:px-16 max-w-7xl mx-auto relative z-10">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
-          
+
           {/* CTA Area */}
           <div className="space-y-8">
             <p className="text-[11px] font-medium uppercase" style={{ color: '#C8A96B', letterSpacing: '4px' }}>
@@ -17,7 +17,7 @@ export function ContactSection() {
             <h2 className="text-4xl lg:text-5xl font-serif font-light text-white leading-tight">
               Only a Few Units <span style={{ color: '#C8A96B' }}>Remaining</span>
             </h2>
-            
+
             <div className="space-y-4">
               <p className="text-lg text-white/80 font-light">
                 Phase 1 sold out completely — don&apos;t miss Phase 2.
@@ -53,7 +53,7 @@ export function ContactSection() {
           {/* Contact Details */}
           <div className="luxury-card p-8 lg:p-10 rounded-2xl border border-[#C8A96B]/30" style={{ background: 'linear-gradient(145deg, rgba(200,169,107,0.05) 0%, rgba(0,0,0,0) 100%)' }}>
             <h3 className="text-2xl font-serif text-white mb-8">Get In Touch</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
@@ -61,8 +61,8 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Call Us</p>
-                  <a href="tel:+917900333103" className="block text-white font-medium text-lg hover:text-gold transition-colors">+91 79003 33 103</a>
-                  <a href="tel:+917900333101" className="block text-white font-medium text-lg hover:text-gold transition-colors">+91 79003 33 101</a>
+
+                  <a href="tel:+919350957700" className="block text-white font-medium text-lg hover:text-gold transition-colors">+91 93509 57700</a>
                 </div>
               </div>
 

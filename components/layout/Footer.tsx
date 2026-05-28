@@ -4,18 +4,18 @@ import { Facebook, Instagram, Youtube, Linkedin, Phone, Clock, MapPin } from 'lu
 import Image from 'next/image';
 
 const quickLinks = [
-  { label: 'Home',          href: '#home'          },
-  { label: 'About Township', href: '#about'         },
-  { label: 'Amenities',     href: '#amenities'     },
-  { label: 'Master Plan',   href: '#master-plan'   },
+  { label: 'Home', href: '#home' },
+  { label: 'About Township', href: '#about' },
+  { label: 'Amenities', href: '#amenities' },
+  { label: 'Master Plan', href: '#master-plan' },
   { label: 'Payment Plans', href: '#payment-plans' },
-  { label: 'Gallery',       href: '#gallery'       },
+  { label: 'Gallery', href: '#gallery' },
 ];
 const exploreLinks = [
-  { label: 'Lifestyle',     href: '#lifestyle'     },
-  { label: 'Location',      href: '#location'      },
-  { label: 'Introduction',  href: '#introduction'  },
-  { label: 'Contact Us',    href: '#contact'       },
+  { label: 'Lifestyle', href: '#lifestyle' },
+  { label: 'Location', href: '#location' },
+  { label: 'Introduction', href: '#introduction' },
+  { label: 'Contact Us', href: '#contact' },
 ];
 
 export function Footer() {
@@ -47,14 +47,16 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex gap-3">
               {[
-                { Icon: Facebook, label: 'Facebook' },
-                { Icon: Instagram, label: 'Instagram' },
-                { Icon: Youtube, label: 'YouTube' },
-                { Icon: Linkedin, label: 'LinkedIn' },
-              ].map(({ Icon, label }) => (
+                { Icon: Facebook, label: 'Facebook', link: "https://www.facebook.com/people/Bhakti-Kunj/61575437597097/" },
+                { Icon: Instagram, label: 'Instagram', link: "https://www.instagram.com/bhaktikunj7" },
+                // { Icon: Youtube, label: 'YouTube', link: "https://www.youtube.com/@BhaktiKunjLiving" },
+                // { Icon: Linkedin, label: 'LinkedIn', link: "https://www.linkedin.com/in/bhakti-kunj-living-115a17283/" },
+              ].map(({ Icon, label, link }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300"
                   style={{
@@ -120,8 +122,8 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">CONTACT</h4>
             <ul className="space-y-4">
               {[
-                { Icon: Phone, text: '+91 79003 33 103' },
-                { Icon: Phone, text: '+91 79003 33 101' },
+                { Icon: Phone, text: '+91 98101 64924' },
+                { Icon: Phone, text: '+91 93509 57700' },
                 { Icon: MapPin, text: '301, 2nd Floor, AGCR Enclave, Near Karkardooma Court, Delhi' },
                 { Icon: Clock, text: 'Mon – Sun, 9:00 AM – 9:00 PM' },
               ].map(({ Icon, text }) => (
